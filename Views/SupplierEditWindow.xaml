@@ -1,0 +1,59 @@
+<Window x:Class="WarehouseAccountingApp.Views.SupplierEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Новый поставщик" Height="560" Width="440"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <ScrollViewer Background="{StaticResource RootBackgroundBrush}">
+        <Border Margin="20" Style="{StaticResource CardStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                           FontSize="22" FontWeight="SemiBold" Margin="0,0,0,16"/>
+
+                <TextBlock Grid.Row="1"  Text="Название организации *" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="2"  x:Name="NameBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="3"  Text="Контактное лицо" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="4"  x:Name="ContactPersonBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="5"  Text="Телефон" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="6"  x:Name="PhoneBox" 
+                           TextChanged="PhoneBox_TextChanged"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="7"  Text="Email" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="8"  x:Name="EmailBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="9"  Text="Адрес" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="10" x:Name="AddressBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="11" Text="Комментарий" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="12" x:Name="CommentBox"
+                           Height="72" TextWrapping="Wrap"
+                           AcceptsReturn="True" VerticalContentAlignment="Top"
+                           Margin="0,0,0,20"/>
+
+                <Button    Grid.Row="13" Content="Сохранить"
+                           Style="{StaticResource PrimaryButtonStyle}"
+                           Height="44" Click="Save_Click"/>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,51 @@
+<UserControl x:Class="WarehouseAccountingApp.Views.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="Отчёты" Style="{StaticResource SectionTitleStyle}" Margin="0,0,0,16"/>
+
+            <!-- Фильтр по периоду -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Период с:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <DatePicker Grid.Column="1" x:Name="DateFrom" Margin="0,0,12,0"/>
+                    <TextBlock Grid.Column="2" Text="по:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <DatePicker Grid.Column="3" x:Name="DateTo" Margin="0,0,0,0"/>
+                </Grid>
+            </Border>
+
+            <!-- Кнопки отчётов -->
+            <WrapPanel Margin="0,0,0,8">
+                <Button Content="Все товары"       Width="150" Margin="0,0,8,8" Click="AllProducts_Click"/>
+                <Button Content="Малый остаток"    Width="150" Margin="0,0,8,8" Foreground="{StaticResource AmberTextBrush}" Click="LowStock_Click"/>
+                <Button Content="Нет остатка"      Width="150" Margin="0,0,8,8" Foreground="{StaticResource RedTextBrush}"   Click="OutOfStock_Click"/>
+                <Button Content="Приход за период" Width="160" Margin="0,0,8,8" Foreground="{StaticResource GreenTextBrush}" Click="StockIn_Click"/>
+                <Button Content="Расход за период" Width="160" Margin="0,0,8,8" Foreground="{StaticResource RedTextBrush}"   Click="StockOut_Click"/>
+                <Button Content="Стоимость склада" Width="160" Margin="0,0,8,8" Click="Cost_Click"/>
+                <Button Content="По поставщикам"   Width="160" Margin="0,0,8,8" Click="Suppliers_Click"/>
+            </WrapPanel>
+
+            <!-- Экспорт -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                <TextBlock Text="Экспорт:" VerticalAlignment="Center" Margin="0,0,10,0"
+                           Style="{StaticResource MutedTextStyle}"/>
+                <Button Content="Excel"  Width="100" Margin="0,0,8,0"
+                        Style="{StaticResource ExcelButtonStyle}" Click="ExportExcel_Click"/>
+                <Button Content="PDF"    Width="100"
+                        Style="{StaticResource PdfButtonStyle}"   Click="ExportPdf_Click"/>
+                <TextBlock x:Name="ReportTitleText" VerticalAlignment="Center" Margin="16,0,0,0"
+                           Foreground="{StaticResource MutedTextBrush}" FontSize="13"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="ReportsGrid"/>
+    </DockPanel>
+</UserControl>

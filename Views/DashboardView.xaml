@@ -1,0 +1,37 @@
+<UserControl x:Class="WarehouseAccountingApp.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBlock Text="Главная" Style="{StaticResource SectionTitleStyle}"/>
+
+        <UniformGrid Columns="4" Margin="0,20,0,20">
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Всего товаров" Style="{StaticResource MutedTextStyle}"/>
+                    <TextBlock x:Name="TotalProductsText" FontSize="28" FontWeight="SemiBold" Foreground="{StaticResource BlueTextBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Малый остаток" Style="{StaticResource MutedTextStyle}"/>
+                    <TextBlock x:Name="LowStockText" FontSize="28" FontWeight="SemiBold" Foreground="{StaticResource AmberTextBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Нет остатка" Style="{StaticResource MutedTextStyle}"/>
+                    <TextBlock x:Name="OutOfStockText" FontSize="28" FontWeight="SemiBold" Foreground="{StaticResource RedTextBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Стоимость склада" Style="{StaticResource MutedTextStyle}"/>
+                    <TextBlock x:Name="TotalCostText" FontSize="26" FontWeight="SemiBold" Foreground="{StaticResource GreenTextBrush}"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+
+        <TextBlock Text="Последние операции" FontSize="20" FontWeight="SemiBold"/>
+        <DataGrid x:Name="OperationsGrid" Height="390"/>
+    </StackPanel>
+</UserControl>

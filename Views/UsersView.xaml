@@ -1,0 +1,28 @@
+<UserControl x:Class="WarehouseAccountingApp.Views.UsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Style="{StaticResource CardStyle}">
+            <StackPanel>
+                <TextBlock Text="Пользователи" Style="{StaticResource SectionTitleStyle}"/>
+                <Grid Margin="0,16,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="130"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="LoginBox" Grid.Column="0" Margin="0,0,8,0" />
+                    <TextBox x:Name="PasswordBox" Grid.Column="1" Margin="0,0,8,0" />
+                    <TextBox x:Name="FullNameBox" Grid.Column="2" Margin="0,0,8,0" />
+                    <ComboBox x:Name="RoleBox" Grid.Column="3" Margin="0,0,8,0" />
+                    <Button Grid.Column="4" Content="Добавить" Style="{StaticResource PrimaryButtonStyle}" Click="Add_Click"/>
+                </Grid>
+                <TextBlock Text="Поля: логин, пароль, ФИО, роль" Style="{StaticResource MutedTextStyle}"/>
+            </StackPanel>
+        </Border>
+
+        <DataGrid x:Name="UsersGrid"/>
+    </DockPanel>
+</UserControl>

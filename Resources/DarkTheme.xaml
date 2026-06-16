@@ -1,0 +1,268 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="RootBackgroundBrush"    Color="#0F0F12"/>
+    <SolidColorBrush x:Key="SurfaceBackgroundBrush" Color="#141416"/>
+    <SolidColorBrush x:Key="PanelBackgroundBrush"   Color="#1A1A1F"/>
+    <SolidColorBrush x:Key="InsetBackgroundBrush"   Color="#1E1E24"/>
+    <SolidColorBrush x:Key="HoverBackgroundBrush"   Color="#26262E"/>
+    <SolidColorBrush x:Key="BorderBrush"            Color="#2E2E38"/>
+    <SolidColorBrush x:Key="PrimaryTextBrush"       Color="#F0F0F5"/>
+    <SolidColorBrush x:Key="SecondaryTextBrush"     Color="#C8C8D0"/>
+    <SolidColorBrush x:Key="MutedTextBrush"         Color="#8E8E9A"/>
+    <SolidColorBrush x:Key="DisabledTextBrush"      Color="#6B6B72"/>
+    <SolidColorBrush x:Key="BlueTextBrush"          Color="#3D7EE8"/>
+    <SolidColorBrush x:Key="BlueSurfaceBrush"       Color="#1E2D4A"/>
+    <SolidColorBrush x:Key="BlueButtonBrush"        Color="#1A4E9E"/>
+    <SolidColorBrush x:Key="BlueButtonTextBrush"    Color="#A8C8F8"/>
+    <SolidColorBrush x:Key="GreenTextBrush"         Color="#22C38E"/>
+    <SolidColorBrush x:Key="GreenSurfaceBrush"      Color="#1A3D2E"/>
+    <SolidColorBrush x:Key="AmberTextBrush"         Color="#F0A030"/>
+    <SolidColorBrush x:Key="AmberSurfaceBrush"      Color="#3D2A0A"/>
+    <SolidColorBrush x:Key="RedTextBrush"           Color="#E05555"/>
+    <SolidColorBrush x:Key="RedSurfaceBrush"        Color="#3D1A1A"/>
+    <SolidColorBrush x:Key="PurpleTextBrush"        Color="#7C5CE8"/>
+    <SolidColorBrush x:Key="LowStockRowBrush"       Color="#1E1A0F"/>
+    <SolidColorBrush x:Key="OutOfStockRowBrush"     Color="#1A1212"/>
+
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource RootBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize"   Value="14"/>
+    </Style>
+    <Style TargetType="UserControl">
+        <Setter Property="Background" Value="{StaticResource RootBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize"   Value="14"/>
+    </Style>
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+    </Style>
+    <Style x:Key="MutedTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource MutedTextBrush}"/>
+        <Setter Property="FontSize"   Value="13"/>
+    </Style>
+    <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="FontSize"   Value="28"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="Padding"             Value="10,8"/>
+        <Setter Property="Margin"              Value="0,4,0,10"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Background"          Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"          Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="CaretBrush"          Value="{StaticResource BlueTextBrush}"/>
+        <Setter Property="BorderBrush"         Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness"     Value="1"/>
+    </Style>
+    <Style TargetType="PasswordBox">
+        <Setter Property="Padding"             Value="10,8"/>
+        <Setter Property="Margin"              Value="0,4,0,10"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Background"          Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"          Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="CaretBrush"          Value="{StaticResource BlueTextBrush}"/>
+        <Setter Property="BorderBrush"         Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness"     Value="1"/>
+    </Style>
+    <Style TargetType="DatePicker">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin"              Value="0,4,0,10"/>
+        <Setter Property="Background"          Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"          Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="BorderBrush"         Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness"     Value="1"/>
+    </Style>
+
+    <Style x:Key="DarkComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="MinHeight"                  Value="30"/>
+        <Setter Property="Padding"                    Value="10,6"/>
+        <Setter Property="HorizontalAlignment"        Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Background"                 Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"                 Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <Border x:Name="ItemBorder" Background="{TemplateBinding Background}"
+                            BorderThickness="0,0,0,1" BorderBrush="{StaticResource InsetBackgroundBrush}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{StaticResource BlueSurfaceBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource BlueTextBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Setter Property="MinHeight"                  Value="42"/>
+        <Setter Property="Padding"                    Value="12,8"/>
+        <Setter Property="Margin"                     Value="0,4,0,10"/>
+        <Setter Property="HorizontalAlignment"        Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Background"                 Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"                 Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="BorderBrush"                Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness"            Value="1"/>
+        <Setter Property="ItemContainerStyle"         Value="{DynamicResource DarkComboBoxItemStyle}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid HorizontalAlignment="Stretch">
+                        <ToggleButton x:Name="DropDownToggle"
+                                      HorizontalAlignment="Stretch"
+                                      HorizontalContentAlignment="Stretch"
+                                      Focusable="False"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press" Background="Transparent" BorderThickness="0">
+                            <Border x:Name="ComboBoxBorder"
+                                    HorizontalAlignment="Stretch"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Padding="{TemplateBinding Padding}">
+                                <Grid HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="28"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ContentPresenter x:Name="ContentSite"
+                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                      ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
+                                                      VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    <Path Grid.Column="1" Width="9" Height="5"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Fill="{StaticResource MutedTextBrush}" Data="M 0 0 L 4.5 5 L 9 0 Z"/>
+                                </Grid>
+                            </Border>
+                        </ToggleButton>
+                        <Popup x:Name="Popup" Placement="Bottom" AllowsTransparency="True"
+                               Focusable="False" IsOpen="{TemplateBinding IsDropDownOpen}" PopupAnimation="None">
+                            <Border MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                    MaxHeight="320"
+                                    Background="{StaticResource PanelBackgroundBrush}"
+                                    BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+                                <ScrollViewer CanContentScroll="True" Background="{StaticResource PanelBackgroundBrush}">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ComboBoxBorder" Property="Background" Value="{StaticResource InsetBackgroundBrush}"/>
+                            <Setter TargetName="ComboBoxBorder" Property="BorderBrush" Value="{StaticResource BlueSurfaceBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="ComboBoxBorder" Property="BorderBrush" Value="{StaticResource BlueTextBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource DisabledTextBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="MinHeight"       Value="36"/>
+        <Setter Property="Padding"         Value="14,8"/>
+        <Setter Property="Margin"          Value="0,4"/>
+        <Setter Property="Cursor"          Value="Hand"/>
+        <Setter Property="Background"      Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"      Value="{StaticResource SecondaryTextBrush}"/>
+        <Setter Property="BorderBrush"     Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style x:Key="PrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"  Value="{StaticResource BlueButtonBrush}"/>
+        <Setter Property="Foreground"  Value="{StaticResource BlueButtonTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BlueButtonBrush}"/>
+    </Style>
+    <Style x:Key="SuccessButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"  Value="{StaticResource GreenSurfaceBrush}"/>
+        <Setter Property="Foreground"  Value="{StaticResource GreenTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GreenSurfaceBrush}"/>
+    </Style>
+    <Style x:Key="DangerButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"  Value="{StaticResource RedSurfaceBrush}"/>
+        <Setter Property="Foreground"  Value="{StaticResource RedTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource RedSurfaceBrush}"/>
+    </Style>
+    <Style x:Key="ExcelButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"  Value="#1A3D2E"/>
+        <Setter Property="Foreground"  Value="#22C38E"/>
+        <Setter Property="BorderBrush" Value="#1A3D2E"/>
+    </Style>
+    <Style x:Key="PdfButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background"  Value="#3D1A1A"/>
+        <Setter Property="Foreground"  Value="#E05555"/>
+        <Setter Property="BorderBrush" Value="#3D1A1A"/>
+    </Style>
+    <Style x:Key="NavButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Background"      Value="Transparent"/>
+        <Setter Property="BorderBrush"     Value="Transparent"/>
+        <Setter Property="Foreground"      Value="{StaticResource SecondaryTextBrush}"/>
+        <Setter Property="Padding"         Value="12,9"/>
+        <Setter Property="Margin"          Value="0,2"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource HoverBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="Tag" Value="Active">
+                <Setter Property="Background"  Value="{StaticResource BlueSurfaceBrush}"/>
+                <Setter Property="Foreground"  Value="{StaticResource BlueTextBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource BlueSurfaceBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CardStyle" TargetType="Border">
+        <Setter Property="Background"          Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="CornerRadius"        Value="8"/>
+        <Setter Property="Padding"             Value="18"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+    <Style TargetType="DataGrid">
+        <Setter Property="AutoGenerateColumns"      Value="True"/>
+        <Setter Property="IsReadOnly"               Value="True"/>
+        <Setter Property="CanUserAddRows"           Value="False"/>
+        <Setter Property="Margin"                   Value="0,10,0,0"/>
+        <Setter Property="Background"               Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground"               Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="BorderBrush"              Value="{StaticResource BorderBrush}"/>
+        <Setter Property="GridLinesVisibility"      Value="Horizontal"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource InsetBackgroundBrush}"/>
+        <Setter Property="RowBackground"            Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="AlternatingRowBackground" Value="{StaticResource InsetBackgroundBrush}"/>
+        <Setter Property="HeadersVisibility"        Value="Column"/>
+    </Style>
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="Background"  Value="{StaticResource SurfaceBackgroundBrush}"/>
+        <Setter Property="Foreground"  Value="{StaticResource DisabledTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="Padding"     Value="10,8"/>
+        <Setter Property="FontWeight"  Value="SemiBold"/>
+    </Style>
+    <Style TargetType="DataGridCell">
+        <Setter Property="Background"  Value="Transparent"/>
+        <Setter Property="Foreground"  Value="{StaticResource PrimaryTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource InsetBackgroundBrush}"/>
+        <Setter Property="Padding"     Value="8,4"/>
+    </Style>
+</ResourceDictionary>

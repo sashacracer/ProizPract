@@ -1,0 +1,58 @@
+<Window x:Class="WarehouseAccountingApp.Views.ProductEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Новый товар" Height="650" Width="440"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <ScrollViewer Background="{StaticResource RootBackgroundBrush}">
+        <Border Margin="20" Style="{StaticResource CardStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Новый товар"
+                           FontSize="22" FontWeight="SemiBold" Margin="0,0,0,16"/>
+
+                <TextBlock Grid.Row="1"  Text="Название *" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="2"  x:Name="NameBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="3"  Text="Категория" Margin="0,0,0,4"/>
+                <ComboBox  Grid.Row="4"  x:Name="CategoryBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="5"  Text="Поставщик" Margin="0,0,0,4"/>
+                <ComboBox  Grid.Row="6"  x:Name="SupplierBox" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="7"  Text="Единица измерения" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="8"  x:Name="UnitBox" Text="шт" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="9"  Text="Начальное количество" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="10" x:Name="QuantityBox" Text="0" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="11" Text="Минимальный остаток" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="12" x:Name="MinQuantityBox" Text="0" Margin="0,0,0,10"/>
+
+                <TextBlock Grid.Row="13" Text="Цена за единицу (₽)" Margin="0,0,0,4"/>
+                <TextBox   Grid.Row="14" x:Name="PriceBox" Text="0" Margin="0,0,0,20"/>
+
+                <Button    Grid.Row="15" Content="Сохранить"
+                           Style="{StaticResource PrimaryButtonStyle}"
+                           Height="44" Click="Save_Click"/>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Window>

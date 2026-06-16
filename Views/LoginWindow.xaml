@@ -1,0 +1,23 @@
+<Window x:Class="WarehouseAccountingApp.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Вход в систему" Height="400" Width="430"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="{StaticResource RootBackgroundBrush}">
+        <Border Width="330" Padding="28" Style="{StaticResource CardStyle}">
+            <StackPanel>
+                <TextBlock Text="Складской учет" FontSize="26" FontWeight="SemiBold"/>
+                <TextBlock Text="Вход пользователя" Style="{StaticResource MutedTextStyle}" Margin="0,4,0,22"/>
+
+                <TextBlock Text="Логин"/>
+                <TextBox x:Name="LoginTextBox" Text="admin"/>
+
+                <TextBlock Text="Пароль"/>
+                <PasswordBox x:Name="PasswordBox" Password="admin123"/>
+
+                <Button Content="Войти" Style="{StaticResource PrimaryButtonStyle}" Click="LoginButton_Click"/>
+                <TextBlock x:Name="ErrorTextBlock" Foreground="{StaticResource RedTextBrush}" TextWrapping="Wrap" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
